@@ -11,6 +11,8 @@
 #include "FactoryCommands.h"
 #include "Command.h"
 
+#include <Magick++.h> 
+
 static const std::string usage_str = "Usage: command supports next options.\n -- load, ld <name>  <filename> \n -- store,s  <name>  <filename> \n -- blur <from> <to> <size> \n -- resize <from> <to>  <new_w> <new_h> \n q, quit, exit. \n ";
 
 
@@ -69,7 +71,8 @@ static CommandTypes parse_stage(const std::string& next_line, std::vector<std::s
 
 
 
-int main() {
+int main(int argc, char** argv) {
+	Magick::InitializeMagick(*argv);
 
 	while (true) {
 
