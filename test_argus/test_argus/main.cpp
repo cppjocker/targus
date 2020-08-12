@@ -74,6 +74,8 @@ static CommandTypes parse_stage(const std::string& next_line, std::vector<std::s
 int main(int argc, char** argv) {
 	Magick::InitializeMagick(*argv);
 
+	ImageMapper images;
+
 	while (true) {
 
 		std::string next_line;
@@ -97,7 +99,7 @@ int main(int argc, char** argv) {
 			continue;
 		}
 
-		current_command->ProcessCommand(words);
+		current_command->ProcessCommand(words, images);
 	}
 
 	return 0;

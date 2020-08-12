@@ -11,6 +11,6 @@ bool HelpCommand::ValidSyntaxStage(const std::vector<std::string >& words) {
 	return false;
 }
 
-void HelpCommand::ProcessCommand(const std::vector<std::string >& words) {
+void HelpCommand::ProcessCommand(const std::vector<std::string >& words, ImageMapper&) {
 	std::cout << help_str << std::endl;
 }
