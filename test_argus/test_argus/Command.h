@@ -24,4 +24,5 @@ public:
 	virtual bool ValidSyntaxStage(const std::vector<std::string >& words) = 0;
 	virtual void ProcessCommand(const std::vector<std::string >& words, ImageMapper&) = 0;
 
+	virtual ~Command() = default;
 };
